@@ -1,0 +1,518 @@
+openapi: 3.0.0
+info:
+  title: 9. Woah API
+  description: |-
+    Free JSON API for every "whoa" said by actor Keanu Reeves in his movies.  
+      
+    [Official Docs.](https://whoa.onrender.com/) No auth needed.
+  version: 1.0.0
+servers:
+  - url: https://whoa.onrender.com
+tags:
+  - name: Whoas
+  - name: Movies
+  - name: Directors
+paths:
+  /whoas/random:
+    get:
+      tags:
+        - Whoas
+      summary: random woah
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Mon, 01 Apr 2024 15:31:16 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-Ray:
+              schema:
+                type: string
+                example: 86d9a009fba943ca-EWR
+            CF-Cache-Status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              schema:
+                type: string
+                example: W/"47d-Xl6e+NDjrte8G82+ptOrN0oirgg"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            rndr-id:
+              schema:
+                type: string
+                example: 1c7f5c23-b412-48fc
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - movie: Bill & Ted Face the Music
+                  year: 2020
+                  release_date: '2020-08-28'
+                  director: Dean Parisot
+                  character: Ted Logan
+                  movie_duration: '01:31:53'
+                  timestamp: '00:52:06'
+                  full_line: Whoa.
+                  current_whoa_in_movie: 4
+                  total_whoas_in_movie: 5
+                  whoa_grouping: null
+                  poster: >-
+                    https://images.ctfassets.net/a6ek464hq2lg/7uQk4GkGE6pklfiuTZ7KSt/843731f596de16ae363cdfaf636952d0/4V2nTPfeB59TcqJcUfQ9ziTi7VN.jpg
+                  video:
+                    1080p: >-
+                      https://videos.ctfassets.net/a6ek464hq2lg/2UsRqCmlXfePNBEyo4aaXu/bfb9861f8a262451f3d694768706fd73/Bill___Ted_Face_the_Music_4__1080p_.mp4
+                    720p: >-
+                      https://videos.ctfassets.net/a6ek464hq2lg/3EIyG006TmWdH6U5amRT12/40c960abdadd52c5d58fb48322f1ad4a/Bill___Ted_Face_the_Music_4__720p_.mp4
+                    480p: >-
+                      https://videos.ctfassets.net/a6ek464hq2lg/3GxgDmABxwnH8PYzvMW2DP/aae6996f405f67ce1c06bf6b262531eb/Bill___Ted_Face_the_Music_4__480p_.mp4
+                    360p: >-
+                      https://videos.ctfassets.net/a6ek464hq2lg/6uNZIDEEaTaUVe4D8PEWbU/6c0c3738f36b8cf831cbc1cff157f551/Bill___Ted_Face_the_Music_4__360p_.mp4
+                  audio: >-
+                    https://assets.ctfassets.net/a6ek464hq2lg/22PxIuCRGLRtEJOZrBXin8/fa1184f0c0d6a02a9142fcf1b32bd389/Bill___Ted_Face_the_Music_4.mp3
+  /whoas/ordered/0:
+    get:
+      tags:
+        - Whoas
+      summary: chronological whoa
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Mon, 01 Apr 2024 15:35:44 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-Ray:
+              schema:
+                type: string
+                example: 86d9a6936e7343ca-EWR
+            CF-Cache-Status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              schema:
+                type: string
+                example: W/"478-dwG/Ka0qmpeFZaiBFN4PU0lrMqM"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            rndr-id:
+              schema:
+                type: string
+                example: 1e5fa99b-e907-44ac
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: chronological woah (single)
+                  value:
+                    movie: Babes in Toyland (The Director's Cut)
+                    year: 1986
+                    release_date: '1986-12-19'
+                    director: Clive Donner
+                    character: Jack Fenton / Jack-be-Nimble
+                    movie_duration: '02:25:13'
+                    timestamp: '00:12:58'
+                    full_line: Caref-whoa!
+                    current_whoa_in_movie: 1
+                    total_whoas_in_movie: 2
+                    whoa_grouping: null
+                    poster: >-
+                      https://images.ctfassets.net/a6ek464hq2lg/7G8GyvfQAl85EeFptdqhZR/abb15177e511c0f2592fa27153c7ba2f/h1qDDRTq2rf8cubZZHzeUwT5Lf6.jpeg
+                    video:
+                      1080p: >-
+                        https://videos.ctfassets.net/a6ek464hq2lg/3kXOsgJOAEkr8UyCnbJeOb/6cafad66c133a1635de0c3614c76e47f/Babes_in_Toyland_1__1080p_.mp4
+                      720p: >-
+                        https://videos.ctfassets.net/a6ek464hq2lg/8myLimtO9vk8AeKrKXm2v/225a9cda44875b4df07a05eb417a1728/Babes_in_Toyland_1__720p_.mp4
+                      480p: >-
+                        https://videos.ctfassets.net/a6ek464hq2lg/1slIhRcNxSMAS6mt96BQDq/fdb1b35bbbf003f5ba46eca28cc62f3e/Babes_in_Toyland_1__480p_.mp4
+                      360p: >-
+                        https://videos.ctfassets.net/a6ek464hq2lg/4YevBqwtVUB2I5ga7LCxn/aabb3cc75c40d1e4aef6370f6fd12352/Babes_in_Toyland_1__360p_.mp4
+                    audio: >-
+                      https://assets.ctfassets.net/a6ek464hq2lg/4xgUe2NQL1v77piAFhVXCx/c8e121f3068fb81232cfdd8a8de0ecad/Babes_in_Toyland_1_Audio.mp3
+                example-1:
+                  summary: chronological whoa (multiple)
+                  value:
+                    - movie: The Night Before
+                      year: 1988
+                      release_date: '1988-04-15'
+                      director: Thom Eberhardt
+                      character: Winston Connelly
+                      movie_duration: '01:30:18'
+                      timestamp: '00:30:52'
+                      full_line: Whoa.
+                      current_whoa_in_movie: 2
+                      total_whoas_in_movie: 11
+                      whoa_grouping: null
+                      poster: >-
+                        https://images.ctfassets.net/a6ek464hq2lg/7GlORd4lwAJs0tPtqzPmy2/815d20f7c8f452f62e8e7fbeb1f29ace/fAm7q29aXTT0eDKPxuXzAGm6dKR.jpeg
+                      video:
+                        1080p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/4hy5CKtu8g3Lkk8HR0Jk1Q/29f9f0f216ff3cbed7f672549346424e/The_Night_Before_2__1080p_.mp4
+                        720p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/2fA0mQh8ODUrimciZF9ETd/95ef2ab4e938cc69c6f4a24f26b63c62/The_Night_Before_2__720p_.mp4
+                        480p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/tp3Q1fQjOCp5AAG7DMsRU/164b58bece69a719807945c177f6a889/The_Night_Before_2__480p_.mp4
+                        360p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/1CqxNjTDO736cQkbkBOgHC/e7f89e34586f247c50b44d679d0b8c5c/The_Night_Before_2__360p_.mp4
+                      audio: >-
+                        https://assets.ctfassets.net/a6ek464hq2lg/2j2dPn7Bv7CUHrg2asihyW/3fbc80185c8a1b22f0962a0c7d92d894/The_Night_Before_2_Audio.mp3
+                    - movie: The Night Before
+                      year: 1988
+                      release_date: '1988-04-15'
+                      director: Thom Eberhardt
+                      character: Winston Connelly
+                      movie_duration: '01:30:18'
+                      timestamp: '00:34:32'
+                      full_line: Whoa.
+                      current_whoa_in_movie: 3
+                      total_whoas_in_movie: 11
+                      whoa_grouping: null
+                      poster: >-
+                        https://images.ctfassets.net/a6ek464hq2lg/7GlORd4lwAJs0tPtqzPmy2/815d20f7c8f452f62e8e7fbeb1f29ace/fAm7q29aXTT0eDKPxuXzAGm6dKR.jpeg
+                      video:
+                        1080p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/2CClLzmg27DcagMdKYNEnt/0c11e13bddc88b6875829c0c7adea78b/The_Night_Before_3__1080p_.mp4
+                        720p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/2y5lcyC9PrA8X7wwZyn7un/3641ee3565381df9ca7d6bcdfe81dbb1/The_Night_Before_3__720p_.mp4
+                        480p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/5e1vv2BOepU1IIsmfW9qy1/4e8269383db506f399864077d36c3265/The_Night_Before_3__480p_.mp4
+                        360p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/6nzPxbUVqnQ6UkmRfOQsd1/4f0ca38140add6609e127a7c4e13defe/The_Night_Before_3__360p_.mp4
+                      audio: >-
+                        https://assets.ctfassets.net/a6ek464hq2lg/5TnXcA8OUrRRU7Z0m6VQmh/dcaf53af61de708243047e602c333bad/The_Night_Before_3_Audio.mp3
+                    - movie: The Night Before
+                      year: 1988
+                      release_date: '1988-04-15'
+                      director: Thom Eberhardt
+                      character: Winston Connelly
+                      movie_duration: '01:30:18'
+                      timestamp: '00:36:20'
+                      full_line: >-
+                        Excuse me. Are we going to talk or are we gonna rock?
+                        Whoa!
+                      current_whoa_in_movie: 4
+                      total_whoas_in_movie: 11
+                      whoa_grouping: null
+                      poster: >-
+                        https://images.ctfassets.net/a6ek464hq2lg/7GlORd4lwAJs0tPtqzPmy2/815d20f7c8f452f62e8e7fbeb1f29ace/fAm7q29aXTT0eDKPxuXzAGm6dKR.jpeg
+                      video:
+                        1080p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/3u2P7naGT4C4E4Jrsn66tB/ff12b06cc4ace427c9d6c958dac2d877/The_Night_Before_4__1080p_.mp4
+                        720p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/5rZzKSRlErIfuZnvD1tZub/2ad694994f4a6bce72fb3839d3f50297/The_Night_Before_4__720p_.mp4
+                        480p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/7lLGr21gk7h7U5GO58C1r6/21c9ec374f92cbf7474cf44a25ed8814/The_Night_Before_4__480p_.mp4
+                        360p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/k0BKWBFnPKPp2h2EbuDpS/cf424414ff4412a2a736363182095265/The_Night_Before_4__360p_.mp4
+                      audio: >-
+                        https://assets.ctfassets.net/a6ek464hq2lg/38CeZY8I6oQ76bvtJQZYiH/392c93b93b93df155a491390ace0169c/The_Night_Before_4_Audio.mp3
+                    - movie: The Night Before
+                      year: 1988
+                      release_date: '1988-04-15'
+                      director: Thom Eberhardt
+                      character: Winston Connelly
+                      movie_duration: '01:30:18'
+                      timestamp: '00:40:18'
+                      full_line: Whoa! OK! Whoa. Yeah. Whoa.
+                      current_whoa_in_movie: 5
+                      total_whoas_in_movie: 11
+                      whoa_grouping: null
+                      poster: >-
+                        https://images.ctfassets.net/a6ek464hq2lg/7GlORd4lwAJs0tPtqzPmy2/815d20f7c8f452f62e8e7fbeb1f29ace/fAm7q29aXTT0eDKPxuXzAGm6dKR.jpeg
+                      video:
+                        1080p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/3F0WN03KbcevBZG4s2RBtW/dd5f4d18b3cf09b472f0d883b2ce8386/The_Night_Before_5__1080p_.mp4
+                        720p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/32RVuZvFq3o689nG28ODsA/e035a27f053ff695591a72c3fd281199/The_Night_Before_5__720p_.mp4
+                        480p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/5XuZAcXG28AtmpAxnQlUw3/aa9916c3388d66eac0d0c6ec045e76f5/The_Night_Before_5__480p_.mp4
+                        360p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/1ijhJmKdlOueij4PdEY5WN/39984060940de5b474121de3b43dd511/The_Night_Before_5__360p_.mp4
+                      audio: >-
+                        https://assets.ctfassets.net/a6ek464hq2lg/1APGDa0a135CUHPBtCv8Gc/cfe412893437bd46daa433cba0396757/The_Night_Before_5_Audio.mp3
+                    - movie: The Night Before
+                      year: 1988
+                      release_date: '1988-04-15'
+                      director: Thom Eberhardt
+                      character: Winston Connelly
+                      movie_duration: '01:30:18'
+                      timestamp: '00:40:21'
+                      full_line: Whoa! OK! Whoa. Yeah. Whoa.
+                      current_whoa_in_movie: 6
+                      total_whoas_in_movie: 11
+                      whoa_grouping: null
+                      poster: >-
+                        https://images.ctfassets.net/a6ek464hq2lg/7GlORd4lwAJs0tPtqzPmy2/815d20f7c8f452f62e8e7fbeb1f29ace/fAm7q29aXTT0eDKPxuXzAGm6dKR.jpeg
+                      video:
+                        1080p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/6zI8l6BBigDQFpYWX3At8n/3d81107d27b5bd736c609bab4d6ff201/The_Night_Before_6__1080p_.mp4
+                        720p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/eiJDBM7tXFwuXCkzqKpcm/ea00b09c5ad44a736f059aea1f2f76a1/The_Night_Before_6__720p_.mp4
+                        480p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/5UCAgRS6woTwEMC4G06R3s/d59abe93d8e589f8877c4b7aa24636fa/The_Night_Before_6__480p_.mp4
+                        360p: >-
+                          https://videos.ctfassets.net/a6ek464hq2lg/2sN9qryosgLhDNFguq0Rag/615a41c751c790ff1cec0057dc733aae/The_Night_Before_6__360p_.mp4
+                      audio: >-
+                        https://assets.ctfassets.net/a6ek464hq2lg/1lQYog2I58jLZt5D9heKGe/4289b17a57e2522dcc948561e1f2a532/The_Night_Before_6_Audio.mp3
+  /whoas/movies:
+    get:
+      tags:
+        - Movies
+      summary: movies
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Mon, 01 Apr 2024 15:37:00 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-Ray:
+              schema:
+                type: string
+                example: 86d9a872581543ca-EWR
+            CF-Cache-Status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              schema:
+                type: string
+                example: W/"165-wECUJSd3fmJIpjRobyw4/PjGBYY"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            rndr-id:
+              schema:
+                type: string
+                example: c3ac869e-7034-4b0f
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - Babes in Toyland (The Director's Cut)
+                - Babes in Toyland
+                - The Night Before
+                - The Prince of Pennsylvania
+                - Bill & Ted's Excellent Adventure
+                - I Love You to Death
+                - Tune in Tomorrow
+                - Point Break
+                - Bill & Ted's Bogus Journey
+                - The Matrix
+                - Sweet November
+                - Knock Knock
+                - The Neon Demon
+                - Toy Story 4
+                - Bill & Ted Face the Music
+                - The Matrix Resurrections
+  /whoas/directors:
+    get:
+      tags:
+        - Directors
+      summary: directors
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Mon, 01 Apr 2024 15:37:37 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            CF-Ray:
+              schema:
+                type: string
+                example: 86d9a956ca2143ca-EWR
+            CF-Cache-Status:
+              schema:
+                type: string
+                example: DYNAMIC
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+            ETag:
+              schema:
+                type: string
+                example: W/"102-ovLXLpf8QNSQCXuzcW9UUaEoIS8"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            rndr-id:
+              schema:
+                type: string
+                example: 45068707-199f-4d3b
+            x-powered-by:
+              schema:
+                type: string
+                example: Express
+            x-render-origin-server:
+              schema:
+                type: string
+                example: Render
+            Server:
+              schema:
+                type: string
+                example: cloudflare
+            Content-Encoding:
+              schema:
+                type: string
+                example: br
+            alt-svc:
+              schema:
+                type: string
+                example: h3=":443"; ma=86400
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - Clive Donner
+                - Thom Eberhardt
+                - Ron Nyswaner
+                - Stephen Herek
+                - Lawrence Kasdan
+                - Jon Amiel
+                - Kathryn Bigelow
+                - Pete Hewitt
+                - Lana Wachowski and Lilly Wachowski
+                - Pat O'Connor
+                - Eli Roth
+                - Nicolas Winding Refn
+                - Josh Cooley
+                - Dean Parisot
+                - Lana Wachowski
